@@ -1,8 +1,20 @@
+@import url("side-bar.css");
+@import url("map.css");
 
+:root{
 
+}
 
 
 body {
     display: flex;
-    background-color: aquamarine;
+    height: 100vh;
+    background-color: #1c1c1c;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
 }
