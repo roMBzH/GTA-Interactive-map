@@ -16,6 +16,7 @@
 #main-container {
     display: flex;
     flex-direction: row;
+    height: 100%;
     height: -webkit-fill-available;
     height: -moz-available;
     width: 100%;
