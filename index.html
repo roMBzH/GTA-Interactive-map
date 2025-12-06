@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/svg+xml">
 
     <!-- CSS LOAD -->
+    <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/loading-screen.css">
     <link rel="stylesheet" href="css/map.css">
@@ -15,8 +16,10 @@
     <link rel="stylesheet" href="css/side-bar.css">
 
     <!-- JS LOAD -->
+    <script src="https://kit.fontawesome.com/ecae510d52.js" crossorigin="anonymous"></script>
     <script src="js/loading.js"></script>
     <script src="js/mapConfig.js"></script> 
+    <script src="js/leaflet.js"></script>
     <script src="js/map.js"></script>
 
   </head>
@@ -41,8 +44,8 @@
         </div>
       </div>
     </div>
-
     <!-------------------->
+
     <main id="main-container">
         
       <div id="side-bar">
@@ -51,14 +54,46 @@
             <h1>REDSTAR</h1>
             <p>Illegal map</p>
           </div>
-          <div class="side-bar-header-right">
-            <a href="#"><img src="img/left.svg"></a>
-          </div>
         </div>
       </div>
 
       <div id="map">
-        MAP
+        <div id="map-controls" class="controls-container">
+          
+          <div class="control-row">
+            <div class="top-left-container">
+              
+              <div class="control-content">
+                <button><i class="fa-solid fa-plus"></i></button>
+                <span>100%</span>
+                <button><i class="fa-solid fa-minus"></i></button>
+              </div>
+
+              <div class="control-content">
+                <p>Y:</p><p id="y-coords"> 0</p>
+              </div>
+
+              <div class="control-content">
+                <p>X:</p><p id="x-coords"> 0</p>
+              </div>
+
+            </div>
+
+            <div class="top-right-container">
+              cursor pos
+            </div>
+          </div>
+
+          <div class="control-row">
+            <div class="bottom-left-container">
+              zoomControl
+            </div>
+            <div class="bottom-right-container">
+              cursor pos
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </main>
@@ -83,9 +118,9 @@
         // Après 4 secondes, étape 2
         setTimeout(() => createInteractiveMap(), 6000);
 
-        setTimeout(() => addMakers(), 8000);
+        setTimeout(() => displayInteractiveMap(), 8000);
 
-        setTimeout(() => displayInteractiveMap(), 10000);
+        setTimeout(() => addMarkers(), 10000);
 
         setTimeout(() => onBeforeFinish(), 12000);
 
@@ -95,8 +130,9 @@
         setTimeout(() => {
           document.getElementById('loading').classList.add('hidden');
           document.getElementById('main-container').classList.add('visible');
+          getCursorPos();
         }, 16000);
-
+        
       }
     </script>
     
