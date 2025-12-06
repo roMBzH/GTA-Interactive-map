@@ -3,3 +3,18 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
+h1 {
+    margin:0px;
+    padding: 0px;
+    color:antiquewhite;
+    font-family: Montserrat;
+    margin-left: -2px;
+}
+
+p {
+    margin:0px;
+    padding:0px;
+    color:antiquewhite;
+    font-family: roboto;
+}

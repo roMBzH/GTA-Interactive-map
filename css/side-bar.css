@@ -1,5 +1,20 @@
 
 
 #side-bar {
-    width: 350px;
+    width: 400px;
+    padding: 30px;
+}
+
+.side-bar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #373737;
+}
+
+.side-bar-header img {
+    width: 30px;
+    height: 40px;
+    cursor: pointer;
 }
