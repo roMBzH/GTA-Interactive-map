@@ -1,0 +1,85 @@
+#loading{
+    opacity: 0;
+}
+#loading.visible{
+    opacity: 1;
+    transition: all 1s linear;
+}
+#loading.hidden {
+    opacity: 0;
+    transition: all 1s linear;
+}
+
+.loading-screen {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1c1c;
+}
+
+.loading-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loading-title {
+    font-size: 120px;
+    font-weight: 700;
+    height: 110px;
+    line-height: 0.9;
+    margin-left: -5px;
+}
+
+
+.loading-subtitle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.loading-subtitle {
+    font-size: 20px;
+}
+
+
+.loading-progressbar {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    border: 1px solid #fff;
+    margin-top: 20px;
+}
+
+.loading-progressbar .bar {
+    width: 50%;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #d3d3d3;
+    transition: all 0.2s linear;
+}
+
+.loading-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.loading-state {
+    font-style: italic;
+}
+
+.loading-percent {
+    font-style: italic;
+}

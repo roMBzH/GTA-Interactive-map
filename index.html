@@ -10,12 +10,35 @@
     <!-- CSS LOAD -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- JS LOAD -->
+    <script src="js/loading.js"></script>
+    <script src="js/mapConfig.js"></script> 
+    <script src="js/map.js"></script>
+
   </head>
 
   <body id="body-container">
 
+    <!-- LOADING SCREEN -->
+    <div id="loading" class="loading-screen">
+      <div class="loading-container">
+        <p class="loading-title">REDSTAR</p>
+        <p class="loading-title">GTA V</p>
+        <div class="loading-subtitle-container">
+          <p class="loading-subtitle">Interactive map</p>
+          <p class="loading-subtitle">v0.1</p>
+        </div>
+        <div class="loading-progressbar">
+          <div id="progressbar" class="bar"></div>
+        </div>
+        <div class="loading-status">
+          <p id="state" class="loading-state">...</p>
+          <p id="percent" class="loading-percent">0%</p>
+        </div>
+      </div>
+    </div>
 
-
+    <!-------------------->
     <main id="main-container">
         
       <div id="side-bar">
@@ -40,7 +63,36 @@
 
     <script>
       window.onload = () => {
-        console.log("test")
+
+        setTimeout(() => {
+          document.getElementById('loading').classList.add('visible');
+        }, 1);
+
+        initLoading();
+
+        // 
+        setTimeout(() => markerDataLoaded(), 2000);
+
+        // Après 2 secondes, étape 1
+        setTimeout(() => createDefaultMapConfig(), 4000);
+
+        // Après 4 secondes, étape 2
+        setTimeout(() => createInteractiveMap(), 6000);
+
+        setTimeout(() => addMakers(), 8000);
+
+        setTimeout(() => displayInteractiveMap(), 10000);
+
+        setTimeout(() => onBeforeFinish(), 12000);
+
+        setTimeout(() => onFinish(), 14000);
+
+        // Masquer le loading après la dernière étape
+        setTimeout(() => {
+          document.getElementById('loading').classList.add('hidden');
+          document.getElementById('main-container').classList.add('visible');
+        }, 16000);
+
       }
     </script>
     
