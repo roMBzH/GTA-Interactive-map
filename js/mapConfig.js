@@ -10,7 +10,7 @@ function createDefaultMapConfig() {
         "width": 2160,
         "height": 3840,
         "minZoom": -1.6,
-        "maxZoom": 0,
+        "maxZoom": 0.5,
         "zoomSnap": 0,
         "iconSize": [20, 20],
         "iconAnchor": [10, 20],

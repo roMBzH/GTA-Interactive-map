@@ -18,9 +18,14 @@
     <!-- JS LOAD -->
     <script src="https://kit.fontawesome.com/ecae510d52.js" crossorigin="anonymous"></script>
     <script src="js/loading.js"></script>
-    <script src="js/mapConfig.js"></script> 
+    <script src="js/mapConfig.js"></script>
+    <script src="data/vendorData.js"></script> 
+    <script src="data/jobData.js"></script> 
+    <script src="data/laboData.js"></script> 
+    <script src="data/dealData.js"></script> 
     <script src="js/leaflet.js"></script>
     <script src="js/map.js"></script>
+    <script src="js/slider.js"></script>
 
   </head>
 
@@ -54,6 +59,75 @@
             <h1>REDSTAR</h1>
             <p>Illegal map</p>
           </div>
+        </div>
+
+        <!-- MAIN MENU -->
+        <div id="side-bar-menu">
+          <div class="side-bar-container">
+
+            <div id="vendor-slider" class="menu-container">
+            <div class="menu-container-title">
+              <div>
+                <div class="dot"></div>
+                <h3>Vendeurs</h3>
+              </div>
+              <a id="vendor-slide-button" class="selected" onclick="slideVendorContent()"><img src="img/left.svg"></a>
+            </div>
+            <div id="vendor-slide-content" class="menu-container-slider slided">
+              <ul id="vendor-list"></ul>
+            </div>
+            </div>
+
+            <div id="job-slider" class="menu-container">
+              <div class="menu-container-title">
+                <div>
+                  <div class="dot"></div>
+                  <h3>Job</h3>
+                </div>
+                <a id="job-slide-button" href="#" onclick="slideJobContent()"><img src="img/left.svg"></a>
+              </div>
+              <div id="job-slide-content" class="menu-container-slider">
+                <ul id="job-list"></ul>
+              </div>
+            </div>
+
+            <div id="labo-slider" class="menu-container">
+              <div class="menu-container-title">
+                <div>
+                  <div class="dot"></div>
+                  <h3>Labo</h3>
+                </div>
+                <a id="labo-slide-button" onclick="slideLaboContent()"><img src="img/left.svg"></a>
+              </div>
+              <div id="labo-slide-content" class="menu-container-slider">
+                <ul id="labo-list"></ul>
+              </div>
+            </div>
+
+            <div id="deal-slider" class="menu-container">
+              <div class="menu-container-title">
+                <div>
+                  <div class="dot"></div>
+                  <h3>Deal</h3>
+                </div>
+                <a id="deal-slide-button" onclick="slideDealContent()"><img src="img/left.svg"></a>
+              </div>
+              <div id="deal-slide-content" class="menu-container-slider">
+                <ul id="deal-list"></ul>
+              </div>
+            </div>
+
+
+          </div>
+          
+
+        </div>
+        <!--------------->
+
+        <!-- FOOTER -->
+        <div class="side-bar-footer">
+          <a href="#"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://github.com/roMBzH/GTA-Interactive-map"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
 
@@ -130,6 +204,10 @@
         setTimeout(() => {
           document.getElementById('loading').classList.add('hidden');
           document.getElementById('main-container').classList.add('visible');
+
+          const loading = document.getElementById('loading')
+          loading.remove();
+
           getCursorPos();
         }, 16000);
         
