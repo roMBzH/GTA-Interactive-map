@@ -74,3 +74,19 @@
     display: flex;
     align-items: center;
 }
+
+
+/* POP UP */ 
+.popup-container {
+
+}
+
+.popup-container h3 {
+    color: #454545;
+}
+
+.popup-container p {
+    margin: 0px;
+    padding: 0px;
+    color: #454545;
+}

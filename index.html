@@ -7,6 +7,13 @@
     <title>REDSTAR - ILLEGAL MAP</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/svg+xml">
 
+    <!-- DATA MARKERS -->
+    <script src="data/vendorData.js"></script> 
+    <script src="data/jobData.js"></script> 
+    <script src="data/methData.js"></script>
+    <script src="data/laboData.js"></script> 
+    <script src="data/dealData.js"></script> 
+
     <!-- CSS LOAD -->
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
@@ -19,10 +26,6 @@
     <script src="https://kit.fontawesome.com/ecae510d52.js" crossorigin="anonymous"></script>
     <script src="js/loading.js"></script>
     <script src="js/mapConfig.js"></script>
-    <script src="data/vendorData.js"></script> 
-    <script src="data/jobData.js"></script> 
-    <script src="data/laboData.js"></script> 
-    <script src="data/dealData.js"></script> 
     <script src="js/leaflet.js"></script>
     <script src="js/map.js"></script>
     <script src="js/slider.js"></script>
@@ -95,12 +98,25 @@
               <div class="menu-container-title">
                 <div>
                   <div class="dot"></div>
-                  <h3>Labo</h3>
+                  <h3>Labo Weed</h3>
                 </div>
                 <a id="labo-slide-button" onclick="slideLaboContent()"><img src="img/left.svg"></a>
               </div>
               <div id="labo-slide-content" class="menu-container-slider">
                 <ul id="labo-list"></ul>
+              </div>
+            </div>
+
+            <div id="meth-slider" class="menu-container">
+              <div class="menu-container-title">
+                <div>
+                  <div class="dot"></div>
+                  <h3>Labo Meth</h3>
+                </div>
+                <a id="meth-slide-button" onclick="slideMethContent()"><img src="img/left.svg"></a>
+              </div>
+              <div id="meth-slide-content" class="menu-container-slider">
+                <ul id="meth-list"></ul>
               </div>
             </div>
 

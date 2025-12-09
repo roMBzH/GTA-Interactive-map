@@ -129,7 +129,10 @@
     margin-left: 24px;
     color: antiquewhite;
 }
-
+.menu-container-slider ul li {
+    cursor: pointer;
+    font-family: roboto;
+}
 
 
 

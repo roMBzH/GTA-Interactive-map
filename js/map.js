@@ -52,6 +52,7 @@ function addMarkers() {
     addVendorMarkers();
     addJobMarkers();
     addLaboMarkers();
+    addMethMarkers();
     addDealMarkers();
 }
 
@@ -69,6 +70,7 @@ function addVendorMarkers() {
         .bindPopup(`
             <div class="popup-container">
                 PopupBinding
+                <h3>${marker.name}</h3>
             </div>
         `);
 
@@ -76,6 +78,7 @@ function addVendorMarkers() {
         li.textContent = marker.name;
         li.addEventListener('click', () => {
             map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+            mapMarker.openPopup();
         });
 
         document.getElementById('vendor-list').appendChild(li);
@@ -104,6 +107,7 @@ function addJobMarkers() {
         li.textContent = marker.name;
         li.addEventListener('click', () => {
             map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+            mapMarker.openPopup();
         });
 
         document.getElementById('job-list').appendChild(li);
@@ -111,10 +115,41 @@ function addJobMarkers() {
 
 }
 
+function addMethMarkers() {
+
+    const laboMarkerico = L.icon({
+        iconUrl: 'img/dot/meth-dot.svg',
+        iconSize: mapConfig.iconSize,
+        iconAnchor: mapConfig.iconAnchor,
+        popupAnchor: mapConfig.popupAnchor
+    });
+
+    methMarkerData.forEach(marker => {
+        const mapMarker = L.marker(marker.pos, {icon: laboMarkerico}).addTo(map)
+        .bindPopup(`
+            <div class="popup-container">
+                <h3>${marker.name}</h3>
+                <p>${marker.img}</p>
+                <p>Camera: ${marker.camera}</p>
+                <p>Description: ${marker.description}</p>
+            </div>
+        `);
+
+        const li = document.createElement('li');
+        li.textContent = marker.name;
+        li.addEventListener('click', () => {
+            map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+            mapMarker.openPopup();
+        });
+
+        document.getElementById('meth-list').appendChild(li);
+    });
+}
+
 function addLaboMarkers() {
 
     const laboMarkerico = L.icon({
-        iconUrl: 'img/dot/labo-dot.svg',
+        iconUrl: 'img/dot/weed-dot.svg',
         iconSize: mapConfig.iconSize,
         iconAnchor: mapConfig.iconAnchor,
         popupAnchor: mapConfig.popupAnchor
@@ -124,7 +159,12 @@ function addLaboMarkers() {
         const mapMarker = L.marker(marker.pos, {icon: laboMarkerico}).addTo(map)
         .bindPopup(`
             <div class="popup-container">
-                PopupBinding
+                <h3>${marker.name}</h3>
+                <p>${marker.img}</p>
+                <p>Camera: ${marker.camera}</p>
+                <p>Nb Pots: ${marker.pots}</p>
+                <p>Nb Presse: ${marker.presse}</p>
+                <p>Description: ${marker.description}</p>
             </div>
         `);
 
@@ -132,6 +172,7 @@ function addLaboMarkers() {
         li.textContent = marker.name;
         li.addEventListener('click', () => {
             map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+            mapMarker.openPopup();
         });
 
         document.getElementById('labo-list').appendChild(li);
@@ -151,7 +192,7 @@ function addDealMarkers() {
         const mapMarker = L.marker(marker.pos, {icon: dealMarkerIco}).addTo(map)
         .bindPopup(`
             <div class="popup-container">
-                PopupBinding
+                <h3>${marker.name}</h3>
             </div>
         `);
 
@@ -159,6 +200,7 @@ function addDealMarkers() {
         li.textContent = marker.name;
         li.addEventListener('click', () => {
             map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+            mapMarker.openPopup();
         });
 
         document.getElementById('deal-list').appendChild(li);

@@ -12,6 +12,8 @@ function slideVendorContent() {
     document.getElementById('labo-slide-content').classList.remove('slided')
     document.getElementById('deal-slide-button').classList.remove('selected')
     document.getElementById('deal-slide-content').classList.remove('slided')
+    document.getElementById('meth-slide-button').classList.remove('selected')
+    document.getElementById('meth-slide-content').classList.remove('slided')
 
 }
 
@@ -26,8 +28,23 @@ function slideJobContent() {
     document.getElementById('labo-slide-content').classList.remove('slided')
     document.getElementById('deal-slide-button').classList.remove('selected')
     document.getElementById('deal-slide-content').classList.remove('slided')
+    document.getElementById('meth-slide-button').classList.remove('selected')
+    document.getElementById('meth-slide-content').classList.remove('slided')
 
+}
 
+function slideMethContent() {
+    document.getElementById('meth-slide-button').classList.add('selected')
+    document.getElementById('meth-slide-content').classList.add('slided')
+
+    document.getElementById('job-slide-button').classList.remove('selected')
+    document.getElementById('job-slide-content').classList.remove('slided')
+    document.getElementById('vendor-slide-button').classList.remove('selected')
+    document.getElementById('vendor-slide-content').classList.remove('slided')
+    document.getElementById('labo-slide-button').classList.remove('selected')
+    document.getElementById('labo-slide-content').classList.remove('slided')
+    document.getElementById('deal-slide-button').classList.remove('selected')
+    document.getElementById('deal-slide-content').classList.remove('slided')
 }
 
 function slideLaboContent() {
@@ -40,6 +57,9 @@ function slideLaboContent() {
     document.getElementById('job-slide-content').classList.remove('slided')
     document.getElementById('deal-slide-button').classList.remove('selected')
     document.getElementById('deal-slide-content').classList.remove('slided')
+    document.getElementById('meth-slide-button').classList.remove('selected')
+    document.getElementById('meth-slide-content').classList.remove('slided')
+
 }
 
 function slideDealContent() {
@@ -52,4 +72,7 @@ function slideDealContent() {
     document.getElementById('job-slide-content').classList.remove('slided')
     document.getElementById('labo-slide-button').classList.remove('selected')
     document.getElementById('labo-slide-content').classList.remove('slided')
+    document.getElementById('meth-slide-button').classList.remove('selected')
+    document.getElementById('meth-slide-content').classList.remove('slided')
+
 }
