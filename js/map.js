@@ -1,6 +1,11 @@
 let map = null;
 let mapBounds = null;
 let mapOverlay = null;
+let vendorLayer = null;
+let jobLayer = null;
+let weedLayer = null;
+let methLayer = null;
+let dealLayer = null;
 
 function createInteractiveMap() {
     updateLoading("Création de la map intéractive...", 35);
@@ -58,6 +63,8 @@ function addMarkers() {
 
 function addVendorMarkers() {
 
+    vendorLayer = L.layerGroup().addTo(map);
+
     const vendorMarkerIco = L.icon({
         iconUrl: 'img/dot/vendor-dot.svg',
         iconSize: mapConfig.iconSize,
@@ -74,6 +81,7 @@ function addVendorMarkers() {
             </div>
         `);
 
+        vendorLayer.addLayer(mapMarker);
         const li = document.createElement('li');
         li.textContent = marker.name;
         li.addEventListener('click', () => {
@@ -88,6 +96,8 @@ function addVendorMarkers() {
 
 function addJobMarkers() {
 
+    jobLayer = L.layerGroup().addTo(map);
+
     const jobMarkerIco = L.icon({
         iconUrl: 'img/dot/job-dot.svg',
         iconSize: mapConfig.iconSize,
@@ -96,13 +106,14 @@ function addJobMarkers() {
     });
 
     jobMarkerData.forEach(marker => {
-        const mapMarker = L.marker(marker.pos, {icon: jobMarkerIco}).addTo(map)
+        const mapMarker = L.marker(marker.pos, {icon: jobMarkerIco, id: marker.id}).addTo(map)
         .bindPopup(`
             <div class="popup-container">
                 PopupBinding
             </div>
         `);
 
+        jobLayer.addLayer(mapMarker);
         const li = document.createElement('li');
         li.textContent = marker.name;
         li.addEventListener('click', () => {
@@ -116,6 +127,8 @@ function addJobMarkers() {
 }
 
 function addMethMarkers() {
+
+    methLayer = L.layerGroup().addTo(map);
 
     const laboMarkerico = L.icon({
         iconUrl: 'img/dot/meth-dot.svg',
@@ -135,6 +148,7 @@ function addMethMarkers() {
             </div>
         `);
 
+        methLayer.addLayer(mapMarker);
         const li = document.createElement('li');
         li.textContent = marker.name;
         li.addEventListener('click', () => {
@@ -147,6 +161,8 @@ function addMethMarkers() {
 }
 
 function addLaboMarkers() {
+
+    weedLayer = L.layerGroup().addTo(map);
 
     const laboMarkerico = L.icon({
         iconUrl: 'img/dot/weed-dot.svg',
@@ -168,6 +184,7 @@ function addLaboMarkers() {
             </div>
         `);
 
+        weedLayer.addLayer(mapMarker);
         const li = document.createElement('li');
         li.textContent = marker.name;
         li.addEventListener('click', () => {
@@ -180,6 +197,8 @@ function addLaboMarkers() {
 }
 
 function addDealMarkers() {
+
+    dealLayer = L.layerGroup().addTo(map);
 
     const dealMarkerIco = L.icon({
         iconUrl: 'img/dot/deal-dot.svg',
@@ -196,6 +215,7 @@ function addDealMarkers() {
             </div>
         `);
 
+        dealLayer.addLayer(mapMarker);
         const li = document.createElement('li');
         li.textContent = marker.name;
         li.addEventListener('click', () => {

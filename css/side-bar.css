@@ -29,6 +29,42 @@
 }
 
 
+/* FILTER */
+
+.map-filter {
+    margin-bottom: 20px;
+}
+
+.map-filter-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.map-filter h3 {
+    padding-bottom: 10px; 
+}
+
+.map-filter-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-filter-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-filter label {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.map-filter input {
+    margin-right: 10px;
+}
+
+/* */
+
 
 /* LIST STYLE */
 

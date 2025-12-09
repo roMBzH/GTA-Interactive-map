@@ -29,6 +29,7 @@
     <script src="js/leaflet.js"></script>
     <script src="js/map.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/filter.js"></script>
 
   </head>
 
@@ -67,6 +68,23 @@
         <!-- MAIN MENU -->
         <div id="side-bar-menu">
           <div class="side-bar-container">
+
+            <div class="map-filter">
+              <h3>Filtres</h3>
+              <div class="map-filter-container">
+                <div class="map-filter-left">
+                  <label><input type="checkbox" id="toggleVendor" onclick="toggleFilter('vendor')" checked><p>Vendeurs</p></label>
+                  <label><input type="checkbox" id="toggleWeed" onclick="toggleFilter('weed')" checked><p>Weed</p></label>
+                  <label><input type="checkbox" id="toggleDeal" onclick="toggleFilter('deal')" checked><p>Deal</p></label>
+                </div>
+                <div class="map-filter-right">
+                  <label><input type="checkbox" id="toggleJob" onclick="toggleFilter('job')" checked><p>Jobs</p></label>
+                  <label><input type="checkbox" id="toggleMeth" onclick="toggleFilter('meth')" checked><p>Meth</p></label>
+                </div>
+              </div>
+              
+              
+            </div>
 
             <div id="vendor-slider" class="menu-container">
             <div class="menu-container-title">
@@ -223,6 +241,7 @@
           const loading = document.getElementById('loading')
           loading.remove();
           getCursorPos();
+          weedFilter();
         }, 16000);
         
       }
