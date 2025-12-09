@@ -12,9 +12,22 @@ h1 {
     margin-left: -2px;
 }
 
+h3 {
+    margin:0px;
+    padding: 0px;
+    color:antiquewhite;
+    font-family: Montserrat;
+}
+
 p {
     margin:0px;
     padding:0px;
     color:antiquewhite;
     font-family: roboto;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
 }

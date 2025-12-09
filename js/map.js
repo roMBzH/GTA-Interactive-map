@@ -47,9 +47,123 @@ function displayInteractiveMap() {
 
 }
 
-
 function addMarkers() {
     updateLoading("Ajout des différents markers...", 50);
+    addVendorMarkers();
+    addJobMarkers();
+    addLaboMarkers();
+    addDealMarkers();
+}
+
+function addVendorMarkers() {
+
+    const vendorMarkerIco = L.icon({
+        iconUrl: 'img/dot/vendor-dot.svg',
+        iconSize: mapConfig.iconSize,
+        iconAnchor: mapConfig.iconAnchor,
+        popupAnchor: mapConfig.popupAnchor
+    });
+
+    vendorMarkerData.forEach(marker => {
+        const mapMarker = L.marker(marker.pos, {icon: vendorMarkerIco}).addTo(map)
+        .bindPopup(`
+            <div class="popup-container">
+                PopupBinding
+            </div>
+        `);
+
+        const li = document.createElement('li');
+        li.textContent = marker.name;
+        li.addEventListener('click', () => {
+            map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+        });
+
+        document.getElementById('vendor-list').appendChild(li);
+    });
+
+}
+
+function addJobMarkers() {
+
+    const jobMarkerIco = L.icon({
+        iconUrl: 'img/dot/job-dot.svg',
+        iconSize: mapConfig.iconSize,
+        iconAnchor: mapConfig.iconAnchor,
+        popupAnchor: mapConfig.popupAnchor
+    });
+
+    jobMarkerData.forEach(marker => {
+        const mapMarker = L.marker(marker.pos, {icon: jobMarkerIco}).addTo(map)
+        .bindPopup(`
+            <div class="popup-container">
+                PopupBinding
+            </div>
+        `);
+
+        const li = document.createElement('li');
+        li.textContent = marker.name;
+        li.addEventListener('click', () => {
+            map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+        });
+
+        document.getElementById('job-list').appendChild(li);
+    });
+
+}
+
+function addLaboMarkers() {
+
+    const laboMarkerico = L.icon({
+        iconUrl: 'img/dot/labo-dot.svg',
+        iconSize: mapConfig.iconSize,
+        iconAnchor: mapConfig.iconAnchor,
+        popupAnchor: mapConfig.popupAnchor
+    });
+
+    laboMarkerData.forEach(marker => {
+        const mapMarker = L.marker(marker.pos, {icon: laboMarkerico}).addTo(map)
+        .bindPopup(`
+            <div class="popup-container">
+                PopupBinding
+            </div>
+        `);
+
+        const li = document.createElement('li');
+        li.textContent = marker.name;
+        li.addEventListener('click', () => {
+            map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+        });
+
+        document.getElementById('labo-list').appendChild(li);
+    });
+}
+
+function addDealMarkers() {
+
+    const dealMarkerIco = L.icon({
+        iconUrl: 'img/dot/deal-dot.svg',
+        iconSize: mapConfig.iconSize,
+        iconAnchor: mapConfig.iconAnchor,
+        popupAnchor: mapConfig.popupAnchor
+    });
+
+    dealMarkerData.forEach(marker => {
+        const mapMarker = L.marker(marker.pos, {icon: dealMarkerIco}).addTo(map)
+        .bindPopup(`
+            <div class="popup-container">
+                PopupBinding
+            </div>
+        `);
+
+        const li = document.createElement('li');
+        li.textContent = marker.name;
+        li.addEventListener('click', () => {
+            map.flyTo(marker.pos, 0, { animate: true, duration: 2 });
+        });
+
+        document.getElementById('deal-list').appendChild(li);
+    });
+
 }
 
 function getCursorPos() {
@@ -62,3 +176,4 @@ function getCursorPos() {
         yCoords.textContent = `${y}`;
     });
 }
+
